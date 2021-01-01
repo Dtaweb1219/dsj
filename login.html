@@ -38,7 +38,7 @@
               type="password"
               name="password"
               required
-              lay-verify="required"
+              lay-verify="required|pwd"
               placeholder="请输入密码"
               autocomplete="off"
               class="layui-input"
@@ -77,7 +77,7 @@
               type="password"
               name="password"
               required
-              lay-verify="required"
+              lay-verify="required|pwd"
               placeholder="请输入密码"
               autocomplete="off"
               class="layui-input"
@@ -109,6 +109,8 @@
         </form>
       </div>
     </div>
+    <!-- 引入layui 的js -->
+    <script src="/assets/lib/layui/layui.all.js"></script>
     <!-- 引入JQuery -->
     <script src="/assets/lib/jquery.js"></script>
     <!-- 引入自己的js -->
