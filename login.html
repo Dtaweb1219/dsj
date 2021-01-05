@@ -58,7 +58,7 @@
         </form>
       </div>
       <div class="reg-box">
-        <form class="layui-form" action="">
+        <form class="layui-form" action="" id="form_reg">
           <div class="layui-form-item">
             <i class="layui-icon layui-icon-username"></i>
             <input
@@ -89,7 +89,7 @@
               type="password"
               name="repassword"
               required
-              lay-verify="required"
+              lay-verify="required|pwd|repwd"
               placeholder="再次确认密码"
               autocomplete="off"
               class="layui-input"
