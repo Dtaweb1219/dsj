@@ -24,7 +24,7 @@ $(function () {
   $("#form_reg").on("submit", function (e) {
     e.preventDefault();
     $.post(
-      "http://api-breakingnews-web.itheima.net/api/reguser",
+      "/api/reguser",
       {
         username: $("#form_reg [name=username]").val(),
         password: $("#form_reg [name=password]").val(),
@@ -43,7 +43,7 @@ $(function () {
   $("#form_login").on("submit", function (e) {
     e.preventDefault();
     $.ajax({
-      url: "http://api-breakingnews-web.itheima.net/api/login",
+      url: "/api/login",
       method: "POST",
       data: $(this).serialize(),
       success: (res) => {
