@@ -8,6 +8,7 @@ $(function () {
     $(".reg-box").hide();
   });
   var form = layui.form;
+  var layer = layui.layer;
   form.verify({
     pwd: [/^[\S]{6,12}$/, "密码必须6到12位，且不能出现空格"],
     repwd: function (value) {
@@ -29,8 +30,13 @@ $(function () {
         password: $("#form_reg [name=password]").val(),
       },
       (res) => {
-        if (res.status !== 0) return console.log("注册失败!" + res.message);
-        console.log(res.message);
+        if (res.status !== 0) {
+          // return console.log("注册失败!" + res.message);
+          return layer.msg(res.message);
+        }
+        // console.log(res.message);
+        layer.msg("注册成功,请登录!");
+        $("#link-login").click();
       }
     );
   });
