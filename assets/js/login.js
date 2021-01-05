@@ -40,4 +40,22 @@ $(function () {
       }
     );
   });
+  $("#form_login").on("submit", function (e) {
+    e.preventDefault();
+    $.ajax({
+      url: "http://api-breakingnews-web.itheima.net/api/login",
+      method: "POST",
+      data: $(this).serialize(),
+      success: (res) => {
+        if (res.status !== 0) {
+          return layer.msg("登录失败!");
+        }
+        layer.msg("登录成功!");
+        // 存储
+        localStorage.setItem("token", res.token);
+        // 跳转到后台主页
+        location.href = "/index.html";
+      },
+    });
+  });
 });
